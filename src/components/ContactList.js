@@ -7,13 +7,13 @@ const ContactList = (props) => {
   const deleteContactHandler = (id) => {
     props.getContactId(id);
   };
-//   const contacts = [
-//     {
-//       id: "1",
-//       name: "Nishant",
-//       email: "nishant@gmail.com",
-//     },
-//   ];
+  //   const contacts = [
+  //     {
+  //       id: "1",
+  //       name: "Nishant",
+  //       email: "nishant@gmail.com",
+  //     },
+  //   ];
 
   const renderContactList = props.contacts.map((contact) => {
     return (
@@ -26,16 +26,15 @@ const ContactList = (props) => {
   });
   return (
     <div style={{ marginTop: "60px" }} class="main">
-      <h2>
-        Contact List
-      </h2>
+      <h2>Contact List</h2>
       <Link to="/add">
-          <button
-            style={{ marginLeft: "900px" }}
-            className="ui button blue right">
-            Add Contact
-          </button>
-        </Link>
+        <button
+          style={{ marginLeft: "900px" }}
+          className="ui button blue right"
+        >
+          Add Contact
+        </button>
+      </Link>
       <div className="ui celled list">{renderContactList}</div>
     </div>
   );
