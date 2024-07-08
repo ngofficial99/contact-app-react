@@ -10,7 +10,7 @@ import ContactDetail from "./ContactDetail";
 import api from "../api/contacts"
 
 function App() {
-  const LOCAL_STORAGE_KEY = "contacts";
+  // const LOCAL_STORAGE_KEY = "contacts";
   const [contacts, setContacts] = useState([]);
 
   //RetriveContacts
@@ -31,7 +31,8 @@ function App() {
     setContacts([...contacts, response.data]);
   };
 
-  const removeContactHandler = (id) => {
+  const removeContactHandler = async (id) => {
+    await api.delete(`/contacts/${id}`);
     const newContactList = contacts.filter((contact) => {
       return contact.id !== id;
     });
