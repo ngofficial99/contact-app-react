@@ -12,6 +12,10 @@ To run this application we also need JSON server to install JSON server you can 
 
 ### `npm i -g json-server`
 
+To start the JSON server we will run the command, this will start the json server in 3006 port and run this command keeping the project directory in the cmd 
+
+### `npx json-server -p 3006 --watch db.json`
+
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
