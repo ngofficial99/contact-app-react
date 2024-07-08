@@ -1,16 +1,22 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import user from "../images/user.png";
 
 const ContactCard = (props) => {
   const { id, name, email } = props.contact;
   return (
-    
-    
-    <div className="item" >
-      <img  style={{ marginTop:"10px"}} className="ui avatar image" src={user} alt="user" />
+    <div className="item">
+      <img
+        style={{ marginTop: "10px" }}
+        className="ui avatar image"
+        src={user}
+        alt="user"
+      />
       <div className="content">
-        <div className="header">{name}</div>
-        <div style={{ marginTop:"10px"}}>{email}</div>
+        <Link to={`/contact/${id}`}>
+          <div className="header">{name}</div>
+          <div style={{ marginTop: "10px" }}>{email}</div>
+        </Link>
       </div>
       <i
         className="trash alternate outline icon"
