@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { v4 as uuidv4 } from 'uuid';
 import "./App.css";
 import Header from "./Header";
@@ -12,9 +13,9 @@ function App() {
 
   const addContactHandler =(contact) => {
     console.log(contact);
-    setContacts([...contacts ,{id: uuidv4(),  ...contact}]);
+    setContacts([...contacts ,{id: uuidv4 (),  ...contact}]);
   }
-
+ 
   const removeContactHandler = (id) =>{
     const newContactList = contacts.filter((contact) => {
       return contact.id !== id;
@@ -35,10 +36,14 @@ function App() {
 
   return (
     <div className="ui container">
+      <Router>
       <Header />
-      <AddContact addContactHandler={addContactHandler} />
-      <ContactList contact={contacts} getContactId={removeContactHandler}/>
-
+      <Route path="/add" component={AddContact}/>
+      <Route path="/" component={ContactList}/>
+      {/* <AddContact addContactHandler={addContactHandler} />
+      <ContactList contact={contacts} getContactId={removeContactHandler}/> */}
+      </Router>
+     
     </div>
   );
 }
