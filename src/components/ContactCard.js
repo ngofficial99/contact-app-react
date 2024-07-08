@@ -13,7 +13,10 @@ const ContactCard = (props) => {
         alt="user"
       />
       <div className="content">
-        <Link to={`/contact/${id}`}>
+      <Link
+          to={`/contact/${id}`}
+          state={{ contact: props.contact }}
+        >
           <div className="header">{name}</div>
           <div style={{ marginTop: "10px" }}>{email}</div>
         </Link>
